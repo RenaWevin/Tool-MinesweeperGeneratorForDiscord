@@ -1,0 +1,3 @@
+# MinesweeperGeneratorForDiscord
+踩地雷生成器 for Discord
+這個專案的方法可以用以生成Discord文字頻道可用的踩地雷遊戲地圖
