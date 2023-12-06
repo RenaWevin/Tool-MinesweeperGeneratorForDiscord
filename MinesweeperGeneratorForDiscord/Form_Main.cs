@@ -102,8 +102,8 @@ namespace MinesweeperGeneratorForDiscord {
         #region 輸出方法
 
         private void button_Generate_Click(object sender, EventArgs e) {
-            int floorX = GetFloorCountHorizontal();
-            int floorY = GetFloorCountVertical();
+            int floorX = GetFloorCountHorizontal(); //地圖寬度
+            int floorY = GetFloorCountVertical(); //地圖高度
             int floorCount = floorX * floorY;
             int mineCount = GetMineCount();
             if (mineCount > floorCount) {
@@ -129,9 +129,40 @@ namespace MinesweeperGeneratorForDiscord {
                 //將最後一項的數值放進這項，直接取代掉就好 
                 mapRandomIds[randomIndex] = mapRandomIds[randomMineMax - 1];
             }
+            //定義檢查該格是否有地雷的方法
+            bool IsCellHasMine(int targetX, int targetY) {
+                int index = (targetY * floorX) + targetX;
+                return map[index] == (int)MapCellType.Mine;
+            }
             //為所有有地雷的周邊加上數字
             for (int i = 0; i < map.Length; i++) {
-                //★
+                //自己不是地雷才能檢查
+                if (map[i] != (int)MapCellType.Mine) {
+                    int cellX = i % floorX; //目前這格是第幾直排
+                    int cellY = i / floorX; //目前這格是第幾橫列
+                    //地雷數量暫存
+                    int cellMineCount = 0;
+                    //檢查上下左右八方向的地雷
+                    for (int checkY = cellY - 1; checkY <= cellY + 1; checkY++) {
+                        for (int checkX = cellX - 1; checkX <= cellX + 1; checkX++) {
+                            //跳過自己
+                            if (checkX == cellX && checkY == cellY) {
+                                continue;
+                            }
+                            //檢查是否有不合理的座標
+                            if (checkX < 0) { continue; }
+                            if (checkX >= floorX) { continue; }
+                            if (checkY < 0) { continue; }
+                            if (checkY >= floorY) { continue; }
+                            //檢查此格是否有地雷
+                            if (IsCellHasMine(checkX, checkY)) {
+                                cellMineCount++;
+                            }
+                        }
+                    }
+                    //最後寫入數量
+                    map[i] = cellMineCount;
+                }
             }
             #endregion
             #region  -> 將整張地圖轉成文字
