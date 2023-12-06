@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("RenaWevin")]
-[assembly: AssemblyProduct("MinesweeperGeneratorForDiscord")]
+[assembly: AssemblyProduct("Discord踩地雷生成器")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

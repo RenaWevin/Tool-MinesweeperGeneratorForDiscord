@@ -24,6 +24,7 @@ namespace MinesweeperGeneratorForDiscord {
         /// 這個方法的內容。
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.numericUpDown_FloorCountHorizontal = new System.Windows.Forms.NumericUpDown();
             this.menuStrip_Main = new System.Windows.Forms.MenuStrip();
             this.程式PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -31,20 +32,20 @@ namespace MinesweeperGeneratorForDiscord {
             this.結束QToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_FloorSizeTitle = new System.Windows.Forms.Label();
             this.groupBox_Parameters = new System.Windows.Forms.GroupBox();
-            this.label_X = new System.Windows.Forms.Label();
-            this.numericUpDown_FloorCountVertical = new System.Windows.Forms.NumericUpDown();
-            this.label_FloorCountTotal = new System.Windows.Forms.Label();
-            this.label_MineCount = new System.Windows.Forms.Label();
             this.numericUpDown_MineCount = new System.Windows.Forms.NumericUpDown();
+            this.label_MineCount = new System.Windows.Forms.Label();
+            this.label_FloorCountTotal = new System.Windows.Forms.Label();
+            this.numericUpDown_FloorCountVertical = new System.Windows.Forms.NumericUpDown();
+            this.label_X = new System.Windows.Forms.Label();
             this.groupBox_Output = new System.Windows.Forms.GroupBox();
+            this.textBox_Output = new System.Windows.Forms.TextBox();
             this.button_Generate = new System.Windows.Forms.Button();
             this.button_Copy = new System.Windows.Forms.Button();
-            this.textBox_Output = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountHorizontal)).BeginInit();
             this.menuStrip_Main.SuspendLayout();
             this.groupBox_Parameters.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountVertical)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_MineCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountVertical)).BeginInit();
             this.groupBox_Output.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@ namespace MinesweeperGeneratorForDiscord {
             // 
             this.製作名單ToolStripMenuItem.Name = "製作名單ToolStripMenuItem";
             this.製作名單ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.製作名單ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.製作名單ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.製作名單ToolStripMenuItem.Text = "製作名單";
             this.製作名單ToolStripMenuItem.Click += new System.EventHandler(this.製作名單ToolStripMenuItem_Click);
             // 
@@ -104,7 +105,7 @@ namespace MinesweeperGeneratorForDiscord {
             // 
             this.結束QToolStripMenuItem.Name = "結束QToolStripMenuItem";
             this.結束QToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.結束QToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.結束QToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.結束QToolStripMenuItem.Text = "結束 (&Q)";
             this.結束QToolStripMenuItem.Click += new System.EventHandler(this.結束QToolStripMenuItem_Click);
             // 
@@ -135,14 +136,47 @@ namespace MinesweeperGeneratorForDiscord {
             this.groupBox_Parameters.TabStop = false;
             this.groupBox_Parameters.Text = "輸入參數";
             // 
-            // label_X
+            // numericUpDown_MineCount
             // 
-            this.label_X.AutoSize = true;
-            this.label_X.Location = new System.Drawing.Point(90, 48);
-            this.label_X.Name = "label_X";
-            this.label_X.Size = new System.Drawing.Size(11, 12);
-            this.label_X.TabIndex = 3;
-            this.label_X.Text = "x";
+            this.numericUpDown_MineCount.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.numericUpDown_MineCount.Location = new System.Drawing.Point(19, 121);
+            this.numericUpDown_MineCount.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.numericUpDown_MineCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_MineCount.Name = "numericUpDown_MineCount";
+            this.numericUpDown_MineCount.Size = new System.Drawing.Size(153, 27);
+            this.numericUpDown_MineCount.TabIndex = 7;
+            this.numericUpDown_MineCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown_MineCount.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // label_MineCount
+            // 
+            this.label_MineCount.AutoSize = true;
+            this.label_MineCount.Location = new System.Drawing.Point(17, 106);
+            this.label_MineCount.Name = "label_MineCount";
+            this.label_MineCount.Size = new System.Drawing.Size(133, 12);
+            this.label_MineCount.TabIndex = 6;
+            this.label_MineCount.Text = "地雷數量 (最小1 最大99)";
+            // 
+            // label_FloorCountTotal
+            // 
+            this.label_FloorCountTotal.AutoSize = true;
+            this.label_FloorCountTotal.Location = new System.Drawing.Point(17, 73);
+            this.label_FloorCountTotal.Name = "label_FloorCountTotal";
+            this.label_FloorCountTotal.Size = new System.Drawing.Size(71, 12);
+            this.label_FloorCountTotal.TabIndex = 5;
+            this.label_FloorCountTotal.Text = "格子數量 = 9";
             // 
             // numericUpDown_FloorCountVertical
             // 
@@ -169,47 +203,14 @@ namespace MinesweeperGeneratorForDiscord {
             0});
             this.numericUpDown_FloorCountVertical.ValueChanged += new System.EventHandler(this.numericUpDown_FloorCountVertical_ValueChanged);
             // 
-            // label_FloorCountTotal
+            // label_X
             // 
-            this.label_FloorCountTotal.AutoSize = true;
-            this.label_FloorCountTotal.Location = new System.Drawing.Point(17, 73);
-            this.label_FloorCountTotal.Name = "label_FloorCountTotal";
-            this.label_FloorCountTotal.Size = new System.Drawing.Size(71, 12);
-            this.label_FloorCountTotal.TabIndex = 5;
-            this.label_FloorCountTotal.Text = "格子數量 = 9";
-            // 
-            // label_MineCount
-            // 
-            this.label_MineCount.AutoSize = true;
-            this.label_MineCount.Location = new System.Drawing.Point(17, 106);
-            this.label_MineCount.Name = "label_MineCount";
-            this.label_MineCount.Size = new System.Drawing.Size(133, 12);
-            this.label_MineCount.TabIndex = 6;
-            this.label_MineCount.Text = "地雷數量 (最小1 最大99)";
-            // 
-            // numericUpDown_MineCount
-            // 
-            this.numericUpDown_MineCount.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.numericUpDown_MineCount.Location = new System.Drawing.Point(19, 121);
-            this.numericUpDown_MineCount.Maximum = new decimal(new int[] {
-            99,
-            0,
-            0,
-            0});
-            this.numericUpDown_MineCount.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown_MineCount.Name = "numericUpDown_MineCount";
-            this.numericUpDown_MineCount.Size = new System.Drawing.Size(153, 27);
-            this.numericUpDown_MineCount.TabIndex = 7;
-            this.numericUpDown_MineCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_MineCount.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.label_X.AutoSize = true;
+            this.label_X.Location = new System.Drawing.Point(90, 48);
+            this.label_X.Name = "label_X";
+            this.label_X.Size = new System.Drawing.Size(11, 12);
+            this.label_X.TabIndex = 3;
+            this.label_X.Text = "x";
             // 
             // groupBox_Output
             // 
@@ -223,6 +224,19 @@ namespace MinesweeperGeneratorForDiscord {
             this.groupBox_Output.TabIndex = 4;
             this.groupBox_Output.TabStop = false;
             this.groupBox_Output.Text = "輸出文字";
+            // 
+            // textBox_Output
+            // 
+            this.textBox_Output.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Output.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox_Output.Location = new System.Drawing.Point(15, 28);
+            this.textBox_Output.Multiline = true;
+            this.textBox_Output.Name = "textBox_Output";
+            this.textBox_Output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox_Output.Size = new System.Drawing.Size(194, 120);
+            this.textBox_Output.TabIndex = 0;
             // 
             // button_Generate
             // 
@@ -249,19 +263,6 @@ namespace MinesweeperGeneratorForDiscord {
             this.button_Copy.UseVisualStyleBackColor = true;
             this.button_Copy.Click += new System.EventHandler(this.button_Copy_Click);
             // 
-            // textBox_Output
-            // 
-            this.textBox_Output.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Output.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_Output.Location = new System.Drawing.Point(15, 28);
-            this.textBox_Output.Multiline = true;
-            this.textBox_Output.Name = "textBox_Output";
-            this.textBox_Output.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox_Output.Size = new System.Drawing.Size(194, 120);
-            this.textBox_Output.TabIndex = 0;
-            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -272,6 +273,7 @@ namespace MinesweeperGeneratorForDiscord {
             this.Controls.Add(this.groupBox_Output);
             this.Controls.Add(this.groupBox_Parameters);
             this.Controls.Add(this.menuStrip_Main);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip_Main;
             this.Name = "Form_Main";
             this.Text = "Discord踩地雷生成器";
@@ -280,8 +282,8 @@ namespace MinesweeperGeneratorForDiscord {
             this.menuStrip_Main.PerformLayout();
             this.groupBox_Parameters.ResumeLayout(false);
             this.groupBox_Parameters.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountVertical)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_MineCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountVertical)).EndInit();
             this.groupBox_Output.ResumeLayout(false);
             this.groupBox_Output.PerformLayout();
             this.ResumeLayout(false);
