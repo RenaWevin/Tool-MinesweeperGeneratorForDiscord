@@ -30,6 +30,10 @@ namespace MinesweeperGeneratorForDiscord {
             this.程式PToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.製作名單ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.結束QToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.參數模板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.模板_預設簡單難度ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.模板_百格挑戰ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label_FloorSizeTitle = new System.Windows.Forms.Label();
             this.groupBox_Parameters = new System.Windows.Forms.GroupBox();
             this.numericUpDown_MineCount = new System.Windows.Forms.NumericUpDown();
@@ -41,6 +45,9 @@ namespace MinesweeperGeneratorForDiscord {
             this.textBox_Output = new System.Windows.Forms.TextBox();
             this.button_Generate = new System.Windows.Forms.Button();
             this.button_Copy = new System.Windows.Forms.Button();
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.模板_半百挑戰ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountHorizontal)).BeginInit();
             this.menuStrip_Main.SuspendLayout();
             this.groupBox_Parameters.SuspendLayout();
@@ -77,7 +84,8 @@ namespace MinesweeperGeneratorForDiscord {
             // menuStrip_Main
             // 
             this.menuStrip_Main.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.程式PToolStripMenuItem});
+            this.程式PToolStripMenuItem,
+            this.參數模板ToolStripMenuItem});
             this.menuStrip_Main.Location = new System.Drawing.Point(0, 0);
             this.menuStrip_Main.Name = "menuStrip_Main";
             this.menuStrip_Main.Size = new System.Drawing.Size(450, 24);
@@ -108,6 +116,40 @@ namespace MinesweeperGeneratorForDiscord {
             this.結束QToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.結束QToolStripMenuItem.Text = "結束 (&Q)";
             this.結束QToolStripMenuItem.Click += new System.EventHandler(this.結束QToolStripMenuItem_Click);
+            // 
+            // 參數模板ToolStripMenuItem
+            // 
+            this.參數模板ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.模板_預設簡單難度ToolStripMenuItem,
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem,
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem,
+            this.toolStripSeparator1,
+            this.模板_半百挑戰ToolStripMenuItem,
+            this.模板_百格挑戰ToolStripMenuItem});
+            this.參數模板ToolStripMenuItem.Name = "參數模板ToolStripMenuItem";
+            this.參數模板ToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.參數模板ToolStripMenuItem.Text = "參數模板 (&T)";
+            // 
+            // 模板_預設簡單難度ToolStripMenuItem
+            // 
+            this.模板_預設簡單難度ToolStripMenuItem.Name = "模板_預設簡單難度ToolStripMenuItem";
+            this.模板_預設簡單難度ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.模板_預設簡單難度ToolStripMenuItem.Text = "預設簡單難度";
+            this.模板_預設簡單難度ToolStripMenuItem.Click += new System.EventHandler(this.模板_預設簡單難度ToolStripMenuItem_Click);
+            // 
+            // 模板_windows3_1踩地雷簡單難度ToolStripMenuItem
+            // 
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem.Name = "模板_windows3_1踩地雷簡單難度ToolStripMenuItem";
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem.Text = "Windows 3.1 踩地雷簡單難度";
+            this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem.Click += new System.EventHandler(this.模板_windows3_1踩地雷簡單難度ToolStripMenuItem_Click);
+            // 
+            // 模板_百格挑戰ToolStripMenuItem
+            // 
+            this.模板_百格挑戰ToolStripMenuItem.Name = "模板_百格挑戰ToolStripMenuItem";
+            this.模板_百格挑戰ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.模板_百格挑戰ToolStripMenuItem.Text = "百格挑戰";
+            this.模板_百格挑戰ToolStripMenuItem.Click += new System.EventHandler(this.模板_百格挑戰ToolStripMenuItem_Click);
             // 
             // label_FloorSizeTitle
             // 
@@ -263,6 +305,25 @@ namespace MinesweeperGeneratorForDiscord {
             this.button_Copy.UseVisualStyleBackColor = true;
             this.button_Copy.Click += new System.EventHandler(this.button_Copy_Click);
             // 
+            // 模板_windows2000踩地雷簡單難度ToolStripMenuItem
+            // 
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem.Name = "模板_windows2000踩地雷簡單難度ToolStripMenuItem";
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem.Text = "Windows 2000 踩地雷簡單難度";
+            this.模板_windows2000踩地雷簡單難度ToolStripMenuItem.Click += new System.EventHandler(this.模板_windows2000踩地雷簡單難度ToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(241, 6);
+            // 
+            // 模板_半百挑戰ToolStripMenuItem
+            // 
+            this.模板_半百挑戰ToolStripMenuItem.Name = "模板_半百挑戰ToolStripMenuItem";
+            this.模板_半百挑戰ToolStripMenuItem.Size = new System.Drawing.Size(244, 22);
+            this.模板_半百挑戰ToolStripMenuItem.Text = "半百挑戰";
+            this.模板_半百挑戰ToolStripMenuItem.Click += new System.EventHandler(this.模板_半百挑戰ToolStripMenuItem_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -309,6 +370,13 @@ namespace MinesweeperGeneratorForDiscord {
         private System.Windows.Forms.Button button_Generate;
         private System.Windows.Forms.Button button_Copy;
         private System.Windows.Forms.TextBox textBox_Output;
+        private System.Windows.Forms.ToolStripMenuItem 參數模板ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 模板_預設簡單難度ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 模板_windows3_1踩地雷簡單難度ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 模板_百格挑戰ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 模板_windows2000踩地雷簡單難度ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem 模板_半百挑戰ToolStripMenuItem;
     }
 }
 

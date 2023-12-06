@@ -54,6 +54,55 @@ namespace MinesweeperGeneratorForDiscord {
         }
 
         #endregion
+        #region 左上角模板選單按鈕事件
+
+        private void SetParameterUIValue(int floorCountHorizontal, int floorCountVertical, int mineCount) {
+            numericUpDown_FloorCountHorizontal.Value = floorCountHorizontal;
+            numericUpDown_FloorCountVertical.Value = floorCountVertical;
+            numericUpDown_MineCount.Value = mineCount;
+        }
+
+        private void 模板_預設簡單難度ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetParameterUIValue(
+                floorCountHorizontal: 5,
+                floorCountVertical: 5,
+                mineCount: 3
+            );
+        }
+
+        private void 模板_windows3_1踩地雷簡單難度ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetParameterUIValue(
+                floorCountHorizontal: 8,
+                floorCountVertical: 8,
+                mineCount: 10
+            );
+        }
+
+        private void 模板_windows2000踩地雷簡單難度ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetParameterUIValue(
+                floorCountHorizontal: 9,
+                floorCountVertical: 9,
+                mineCount: 10
+            );
+        }
+
+        private void 模板_半百挑戰ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetParameterUIValue(
+                floorCountHorizontal: 7,
+                floorCountVertical: 7,
+                mineCount: 9
+            );
+        }
+
+        private void 模板_百格挑戰ToolStripMenuItem_Click(object sender, EventArgs e) {
+            SetParameterUIValue(
+                floorCountHorizontal: 10,
+                floorCountVertical: 10,
+                mineCount: 20
+            );
+        }
+
+        #endregion
         #region 地圖大小更新
 
         private void numericUpDown_FloorCountHorizontal_ValueChanged(object sender, EventArgs e) {
