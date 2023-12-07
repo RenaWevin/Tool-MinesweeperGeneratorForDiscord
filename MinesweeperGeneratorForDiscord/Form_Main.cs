@@ -45,8 +45,21 @@ namespace MinesweeperGeneratorForDiscord {
 
         #region 左上角目錄選單按鈕事件
 
+        private void 使用說明HToolStripMenuItem_Click(object sender, EventArgs e) {
+            const string msgFormat = "本軟體可產生出可以在Discord文字頻道中\n模擬踩地雷小遊戲的文字地圖格式" +
+                "\n\n可參考以下步驟使用：" +
+                "\n1. 選擇參數模板，或者選擇地圖大小與地雷數量" +
+                "\n2. 按下「生成按鈕」，接著「按下複製已生成的文字」按鈕" +
+                "\n3. 將複製到的文字貼到Discord文字頻道中送出" +
+                "\n4. 開始遊玩踩地雷！" +
+                "\n\n請各位使用時遵守Discord社群禮儀\n本軟體製作者不負任何因使用此軟體造成後果的責任";
+            MessageBox.Show(string.Format(msgFormat), "使用說明", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         private void 製作名單ToolStripMenuItem_Click(object sender, EventArgs e) {
-            MessageBox.Show($"Discord踩地雷生成器 {Application.ProductVersion}\n製作 by 魚丸◎蕾娜", "製作名單", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            const string msgFormat = "Discord踩地雷生成器 {0}\n製作 by 魚丸◎蕾娜" +
+                "\n\n請各位使用時遵守Discord社群禮儀\n本軟體製作者不負任何因使用此軟體造成後果的責任";
+            MessageBox.Show(string.Format(msgFormat, Application.ProductVersion), "製作名單", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void 結束QToolStripMenuItem_Click(object sender, EventArgs e) {

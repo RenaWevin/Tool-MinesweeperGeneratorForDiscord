@@ -48,6 +48,7 @@ namespace MinesweeperGeneratorForDiscord {
             this.textBox_Output = new System.Windows.Forms.TextBox();
             this.button_Generate = new System.Windows.Forms.Button();
             this.button_Copy = new System.Windows.Forms.Button();
+            this.使用說明HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_FloorCountHorizontal)).BeginInit();
             this.menuStrip_Main.SuspendLayout();
             this.groupBox_Parameters.SuspendLayout();
@@ -95,6 +96,7 @@ namespace MinesweeperGeneratorForDiscord {
             // 程式PToolStripMenuItem
             // 
             this.程式PToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.使用說明HToolStripMenuItem,
             this.製作名單ToolStripMenuItem,
             this.結束QToolStripMenuItem});
             this.程式PToolStripMenuItem.Name = "程式PToolStripMenuItem";
@@ -104,8 +106,7 @@ namespace MinesweeperGeneratorForDiscord {
             // 製作名單ToolStripMenuItem
             // 
             this.製作名單ToolStripMenuItem.Name = "製作名單ToolStripMenuItem";
-            this.製作名單ToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.製作名單ToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.製作名單ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.製作名單ToolStripMenuItem.Text = "製作名單";
             this.製作名單ToolStripMenuItem.Click += new System.EventHandler(this.製作名單ToolStripMenuItem_Click);
             // 
@@ -113,7 +114,7 @@ namespace MinesweeperGeneratorForDiscord {
             // 
             this.結束QToolStripMenuItem.Name = "結束QToolStripMenuItem";
             this.結束QToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.結束QToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.結束QToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.結束QToolStripMenuItem.Text = "結束 (&Q)";
             this.結束QToolStripMenuItem.Click += new System.EventHandler(this.結束QToolStripMenuItem_Click);
             // 
@@ -324,6 +325,14 @@ namespace MinesweeperGeneratorForDiscord {
             this.button_Copy.UseVisualStyleBackColor = true;
             this.button_Copy.Click += new System.EventHandler(this.button_Copy_Click);
             // 
+            // 使用說明HToolStripMenuItem
+            // 
+            this.使用說明HToolStripMenuItem.Name = "使用說明HToolStripMenuItem";
+            this.使用說明HToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.使用說明HToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.使用說明HToolStripMenuItem.Text = "使用說明 (&H)";
+            this.使用說明HToolStripMenuItem.Click += new System.EventHandler(this.使用說明HToolStripMenuItem_Click);
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -377,6 +386,7 @@ namespace MinesweeperGeneratorForDiscord {
         private System.Windows.Forms.ToolStripMenuItem 模板_windows2000踩地雷簡單難度ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem 模板_半百挑戰ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 使用說明HToolStripMenuItem;
     }
 }
 
