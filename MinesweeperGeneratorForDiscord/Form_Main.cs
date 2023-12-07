@@ -94,10 +94,10 @@ namespace MinesweeperGeneratorForDiscord {
             );
         }
 
-        private void 模板_百格挑戰ToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void 模板_99挑戰ToolStripMenuItem_Click(object sender, EventArgs e) {
             SetParameterUIValue(
-                floorCountHorizontal: 10,
-                floorCountVertical: 10,
+                floorCountHorizontal: 11,
+                floorCountVertical: 9,
                 mineCount: 20
             );
         }
@@ -215,8 +215,8 @@ namespace MinesweeperGeneratorForDiscord {
             }
             #endregion
             #region  -> 將整張地圖轉成文字
-            sb.AppendLine($"地圖大小 {floorX}x{floorY}");
-            sb.AppendLine($"地雷數量 {mineCount}");
+            sb.AppendLine($"地圖大小：{floorX}x{floorY}");
+            sb.AppendLine($"地雷數量：{mineCount}");
             for (int i = 0; i < map.Length; i++) {
                 if (i > 0 && i % floorX == 0) {
                     sb.AppendLine();
