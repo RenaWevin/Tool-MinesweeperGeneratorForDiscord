@@ -22,9 +22,13 @@ namespace MinesweeperGeneratorForDiscord {
             MapCellTypeStrings.Add(MapCellType.Cell6, "||:six:||");
             MapCellTypeStrings.Add(MapCellType.Cell7, "||:seven:||");
             MapCellTypeStrings.Add(MapCellType.Cell8, "||:eight:||");
+            isShowed100CellWarning = false;
         }
 
         private readonly Dictionary<MapCellType, string> MapCellTypeStrings = new Dictionary<MapCellType, string>();
+
+        //本次啟動已經顯示過一次100格警告
+        private bool isShowed100CellWarning = false;
 
         #region enum
 
@@ -57,7 +61,7 @@ namespace MinesweeperGeneratorForDiscord {
         }
 
         private void 製作名單ToolStripMenuItem_Click(object sender, EventArgs e) {
-            const string msgFormat = "Discord踩地雷生成器 {0}\n製作 by 魚丸◎蕾娜" +
+            const string msgFormat = "Discord踩地雷生成器 {0}\n軟體製作 by 魚丸◎蕾娜" +
                 "\n\n請各位使用時遵守Discord社群禮儀\n本軟體製作者不負任何因使用此軟體造成後果的責任";
             MessageBox.Show(string.Format(msgFormat, Application.ProductVersion), "製作名單", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -147,6 +151,11 @@ namespace MinesweeperGeneratorForDiscord {
             int y = GetFloorCountVertical();
             int count = x * y;
             label_FloorCountTotal.Text = $"格子數量 = {count}";
+            if (count >= 100) {
+                label_FloorCountTotal.ForeColor = Color.Red;
+            } else {
+                label_FloorCountTotal.ForeColor = Color.Black;
+            }
         }
 
         #endregion
@@ -168,6 +177,10 @@ namespace MinesweeperGeneratorForDiscord {
             int floorY = GetFloorCountVertical(); //地圖高度
             int floorCount = floorX * floorY;
             int mineCount = GetMineCount();
+            if (floorCount >= 100 && !isShowed100CellWarning) {
+                MessageBox.Show("格子量超過100時\n可能會無法顯示在Discord文字頻道！\n(此警告只會顯示一次)", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                isShowed100CellWarning = true;
+            }
             if (mineCount > floorCount) {
                 MessageBox.Show("地雷數量不能比地圖的格子總數還多！", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
